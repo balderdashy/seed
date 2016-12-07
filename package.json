@@ -1,0 +1,28 @@
+{
+  "name": "seed",
+  "private": true,
+  "version": "0.0.0",
+  "description": "a Sails application",
+  "keywords": [],
+  "dependencies": {
+    "sails": "^1.0.0-17",
+    "grunt": "1.0.1",
+    "sails-hook-orm": "^2.0.0-0",
+    "sails-hook-sockets": "^1.0.1",
+    "sails-hook-grunt": "^1.0.4",
+    "lodash": "3.10.1",
+    "async": "2.0.1"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo && echo \"* * * * * * * * * * * * * * * * * * * * * * * * * * * \" && echo \"About to run tests...\" && echo && if node ./node_modules/mocha/bin/mocha --timeout 10000 ; then sleep 0.0001; else echo && echo && echo \"- - -\" && echo \"Looks like something went wrong.\" && echo \"|  If you are not sure what to do next, try:\" && echo \"|  npm install mocha@3.0.2 --save-dev --save-exact\" && echo \"|  \" && echo \"|  And then:\" && echo \"|  mkdir test/\" && echo ; fi",
+    "debug": "node debug app.js"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikermcneil/seed.git"
+  },
+  "author": "mikermcneil",
+  "license": ""
+}
