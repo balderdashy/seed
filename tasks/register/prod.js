@@ -1,5 +1,5 @@
 /**
- * `tasks/register/prod.js`
+ * `prod`
  *
  * ---------------------------------------------------------------
  *
@@ -8,7 +8,7 @@
  * `NODE_ENV=production node app`).
  *
  * For more information see:
- *   http://sailsjs.com/anatomy/tasks/register/prod-js
+ *   http://sailsjs.org/documentation/anatomy/my-app/tasks/register/prod-js
  *
  */
 module.exports = function(grunt) {
@@ -19,6 +19,9 @@ module.exports = function(grunt) {
     'cssmin',
     'sails-linker:prodJs',
     'sails-linker:prodStyles',
-    'sails-linker:devTpl'
+    'sails-linker:devTpl',
+    'sails-linker:prodJsJade',
+    'sails-linker:prodStylesJade',
+    'sails-linker:devTplJade'
   ]);
 };

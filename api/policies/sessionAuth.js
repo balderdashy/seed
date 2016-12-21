@@ -1,22 +1,21 @@
 /**
  * sessionAuth
  *
- * A simple policy that allows any request from an authenticated user.
+ * @module      :: Policy
+ * @description :: Simple policy to allow any authenticated user
+ *                 Assumes that your login action in one of your controllers sets `req.session.authenticated = true;`
+ * @docs        :: http://sailsjs.org/#!/documentation/concepts/Policies
  *
- * For more about how this policy works and how to use it, see:
- *   http://sailsjs.com/anatomy/api/policies/session-auth-js
  */
-module.exports = function sessionAuth(req, res, next) {
+module.exports = function(req, res, next) {
 
-  // If `req.session.userId` is set, then we know that this request originated
-  // from a logged-in user.  So we can safely proceed to the next policy--
-  // or, if this is the last policy, the relevant action.
-  if (req.session.userId) {
+  // User is allowed, proceed to the next policy, 
+  // or if this is the last policy, the controller
+  if (req.session.authenticated) {
     return next();
   }
 
-  //--•
-  // Otherwise, this request did not come from a logged-in user.
-  return res.forbidden();
-  
+  // User is not allowed
+  // (default res.forbidden() behavior can be overridden in `config/403.js`)
+  return res.forbidden('You are not permitted to perform this action.');
 };

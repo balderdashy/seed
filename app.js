@@ -13,11 +13,9 @@
  *   => `modulus deploy`
  *   => `heroku scale`
  *
+ *
  * The same command-line arguments are supported, e.g.:
  * `node app.js --silent --port=80 --prod`
- *
- * For more information see:
- *   http://sailsjs.com/anatomy/app.js
  */
 
 
@@ -26,26 +24,36 @@
 // > Note: This is not required in order to lift, but it is a convenient default.
 process.chdir(__dirname);
 
-
-
-// Attempt to import `sails` dependency, as well as `rc` (for loading `.sailsrc` files).
+// Attempt to import `sails`.
 var sails;
-var rc;
 try {
   sails = require('sails');
-  rc = require('sails/accessible/rc');
 } catch (e) {
-  console.error('Encountered an error when attempting to require(\'sails\'):');
-  console.error(e.stack);
-  console.error('--');
   console.error('To run an app using `node app.js`, you usually need to have a version of `sails` installed in the same directory as your app.');
   console.error('To do that, run `npm install sails`');
-  console.error();
+  console.error('');
   console.error('Alternatively, if you have sails installed globally (i.e. you did `npm install -g sails`), you can use `sails lift`.');
   console.error('When you run `sails lift`, your app will still use a local `./node_modules/sails` dependency if it exists,');
   console.error('but if it doesn\'t, the app will run with the global sails instead!');
   return;
-}//-•
+}
+
+// --•
+// Try to get `rc` dependency (for loading `.sailsrc` files).
+var rc;
+try {
+  rc = require('rc');
+} catch (e0) {
+  try {
+    rc = require('sails/node_modules/rc');
+  } catch (e1) {
+    console.error('Could not find dependency: `rc`.');
+    console.error('Your `.sailsrc` file(s) will be ignored.');
+    console.error('To resolve this, run:');
+    console.error('npm install rc --save');
+    rc = function () { return {}; };
+  }
+}
 
 
 // Start server

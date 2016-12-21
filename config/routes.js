@@ -17,15 +17,15 @@
  * CoffeeScript for the front-end.
  *
  * For more information on configuring custom routes, check out:
- * http://sailsjs.com/docs/concepts/routes/custom-routes
+ * http://sailsjs.org/#!/documentation/concepts/Routes/RouteTargetSyntax.html
  */
 
 module.exports.routes = {
 
-  
   /***************************************************************************
   *                                                                          *
-  * Make the view located at `views/homepage.ejs` your home page.            *
+  * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
+  * etc. depending on your default view engine) your home page.              *
   *                                                                          *
   * (Alternatively, remove this and add an `index.html` file in your         *
   * `assets` directory)                                                      *
@@ -34,9 +34,7 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  },
-
-  
+  }
 
   /***************************************************************************
   *                                                                          *

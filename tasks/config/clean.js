@@ -1,13 +1,13 @@
 /**
- * `tasks/config/clean`
+ * `clean`
  *
  * ---------------------------------------------------------------
  *
  * Remove the files and folders in your Sails app's web root
  * (conventionally a hidden directory called `.tmp/public`).
  *
- * For more information, see:
- *   http://sailsjs.com/anatomy/tasks/config/clean-js
+ * For usage docs see:
+ *   https://github.com/gruntjs/grunt-contrib-clean
  *
  */
 module.exports = function(grunt) {
@@ -17,28 +17,5 @@ module.exports = function(grunt) {
     build: ['www']
   });
 
-  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  // This Grunt plugin is part of the default asset pipeline in Sails,
-  // so it's already been automatically loaded for you at this point.
-  //
-  // Of course, you can always remove this Grunt plugin altogether by
-  // deleting this file.  But check this out: you can also use your
-  // _own_ custom version of this Grunt plugin.
-  //
-  // Here's how:
-  //
-  // 1. Install it as a local dependency of your Sails app:
-  //    ```
-  //    $ npm install grunt-contrib-clean --save-dev --save-exact
-  //    ```
-  //
-  //
-  // 2. Then uncomment the following code:
-  //
-  // ```
-  // // Load Grunt plugin from the node_modules/ folder.
-  // grunt.loadNpmTasks('grunt-contrib-clean');
-  // ```
-  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+  grunt.loadNpmTasks('grunt-contrib-clean');
 };

@@ -1,22 +1,31 @@
 {
-  "name": "seed",
+  "name": "0.12-seed",
   "private": true,
   "version": "0.0.0",
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
-    "sails": "^1.0.0-17",
+    "ejs": "2.3.4",
     "grunt": "1.0.1",
-    "sails-hook-orm": "^2.0.0-0",
-    "sails-hook-sockets": "^1.0.1",
-    "sails-hook-grunt": "^1.0.4",
-    "lodash": "3.10.1",
-    "async": "2.0.1"
+    "grunt-contrib-clean": "1.0.0",
+    "grunt-contrib-coffee": "1.0.0",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-cssmin": "1.0.1",
+    "grunt-contrib-jst": "1.0.0",
+    "grunt-contrib-less": "1.3.0",
+    "grunt-contrib-uglify": "1.0.1",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-sails-linker": "~0.10.1",
+    "grunt-sync": "0.5.2",
+    "include-all": "^1.0.0",
+    "rc": "1.0.1",
+    "sails": "~0.12.11",
+    "sails-disk": "~0.10.9"
   },
   "scripts": {
-    "start": "node app.js",
-    "test": "echo && echo \"* * * * * * * * * * * * * * * * * * * * * * * * * * * \" && echo \"About to run tests...\" && echo && if node ./node_modules/mocha/bin/mocha --timeout 10000 ; then sleep 0.0001; else echo && echo && echo \"- - -\" && echo \"Looks like something went wrong.\" && echo \"|  If you are not sure what to do next, try:\" && echo \"|  npm install mocha@3.0.2 --save-dev --save-exact\" && echo \"|  \" && echo \"|  And then:\" && echo \"|  mkdir test/\" && echo ; fi",
-    "debug": "node debug app.js"
+    "debug": "node debug app.js",
+    "start": "node app.js"
   },
   "main": "app.js",
   "repository": {

@@ -5,11 +5,14 @@
  * If your app will touch people from all over the world, i18n (or internationalization)
  * may be an important part of your international strategy.
  *
- * For a complete list of options for Sails' built-in i18n support, see:
- * http://sailsjs.com/config/i-18-n
  *
- * For more info on i18n in Sails in general, check out:
- * http://sailsjs.com/docs/concepts/internationalization
+ * For more informationom i18n in Sails, check out:
+ * http://sailsjs.org/#!/documentation/concepts/Internationalization
+ *
+ * For a complete list of i18n options, see:
+ * https://github.com/mashpie/i18n-node#list-of-configuration-options
+ *
+ *
  */
 
 module.exports.i18n = {
@@ -49,6 +52,6 @@ module.exports.i18n = {
   *                                                                           *
   ****************************************************************************/
 
-  // localesDirectory: 'config/locales'
+  // localesDirectory: '/config/locales'
 
 };

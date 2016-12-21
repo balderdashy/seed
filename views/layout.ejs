@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>New Sails App</title>
+    <title><%=typeof title == 'undefined' ? 'New Sails App' : title%></title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -53,7 +53,7 @@
         For example, here are a few things you could do:
 
             + Import templates from other directories
-            + Use a different view engine (handlebars, dust, pug/jade, etc.)
+            + Use a different template engine (handlebars, jade, dust, etc.)
             + Internationalize your client-side templates using a server-side
               stringfile before they're served.
     -->

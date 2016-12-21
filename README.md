@@ -3,7 +3,7 @@
 A sample [Sails](http://sailsjs.com) application, generated using:
 
 ```
-npm install -g sails@balderdashy/sails#87624e7aa9aedddb3c8ee75decd37e4ff2a4ee83
+npm install -g sails
 ```
 
 

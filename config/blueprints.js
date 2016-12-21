@@ -7,7 +7,7 @@
  *
  * You may also override any of these settings on a per-controller basis
  * by defining a '_config' key in your controller definition, and assigning it
- * a configuration dictionary with overrides for the settings in this file.
+ * a configuration object with overrides for the settings in this file.
  * A lot of the configuration options below affect so-called "CRUD methods",
  * or your controllers' `find`, `create`, `update`, and `destroy` actions.
  *
@@ -16,10 +16,10 @@
  * logic in the form of a JSON API, including support for sort, pagination, and filtering.
  *
  * For more information on the blueprint API, check out:
- * http://sailsjs.com/docs/reference/blueprint-api
+ * http://sailsjs.org/#!/documentation/reference/blueprint-api
  *
  * For more information on the settings in this file, see:
- * http://sailsjs.com/config/blueprints
+ * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.blueprints.html
  *
  */
 

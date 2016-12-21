@@ -1,5 +1,5 @@
 /**
- * `tasks/register/compileAssets.js`
+ * `compileAssets`
  *
  * ---------------------------------------------------------------
  *
@@ -8,7 +8,7 @@
  * `buildProd` tasklists.
  *
  * For more information see:
- *   http://sailsjs.com/anatomy/tasks/register/compile-assets-js
+ *   http://sailsjs.org/documentation/anatomy/my-app/tasks/register/compile-assets-js
  *
  */
 module.exports = function(grunt) {

@@ -1,5 +1,5 @@
 /**
- * `tasks/config/sails-linker`
+ * `sails-linker`
  *
  * ---------------------------------------------------------------
  *
@@ -23,21 +23,13 @@
  * templates, CoffeeScript, or LESS files are bundled into these same two minified
  * files as well.
  *
- * For more information, see:
- *   http://sailsjs.com/anatomy/tasks/config/sails-linker-js
+ * For usage docs see:
+ *   https://github.com/Zolmeister/grunt-sails-linker
  *
  */
 module.exports = function(grunt) {
 
   grunt.config.set('sails-linker', {
-
-
-    //   ╦╔═╗╦  ╦╔═╗╔═╗╔═╗╦═╗╦╔═╗╔╦╗
-    //   ║╠═╣╚╗╔╝╠═╣╚═╗║  ╠╦╝║╠═╝ ║
-    //  ╚╝╩ ╩ ╚╝ ╩ ╩╚═╝╚═╝╩╚═╩╩   ╩
-    //  ┌─    ┌─┐┬  ┬┌─┐┌┐┌┌┬┐  ┌─┐┬┌┬┐┌─┐   ┬┌─┐┬  ┬┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐    ─┐
-    //  │───  │  │  │├┤ │││ │───└─┐│ ││├┤    │├─┤└┐┌┘├─┤└─┐│  ├┬┘│├─┘ │   ───│
-    //  └─    └─┘┴─┘┴└─┘┘└┘ ┴   └─┘┴─┴┘└─┘  └┘┴ ┴ └┘ ┴ ┴└─┘└─┘┴└─┴┴   ┴     ─┘
     devJs: {
       options: {
         startTag: '<!--SCRIPTS-->',
@@ -96,13 +88,6 @@ module.exports = function(grunt) {
       }
     },
 
-
-    //  ╔═╗╔╦╗╦ ╦╦  ╔═╗╔═╗╦ ╦╔═╗╔═╗╔╦╗╔═╗
-    //  ╚═╗ ║ ╚╦╝║  ║╣ ╚═╗╠═╣║╣ ║╣  ║ ╚═╗
-    //  ╚═╝ ╩  ╩ ╩═╝╚═╝╚═╝╩ ╩╚═╝╚═╝ ╩ ╚═╝
-    //  ┌─    ┬┌┐┌┌─┐┬  ┬ ┬┌┬┐┬┌┐┌┌─┐  ╔═╗╔═╗╔═╗   ┬   ┌─┐┌─┐┌┬┐┌─┐┬┬  ┌─┐┌┬┐  ╦  ╔═╗╔═╗╔═╗    ─┐
-    //  │───  │││││  │  │ │ │││││││ ┬  ║  ╚═╗╚═╗  ┌┼─  │  │ ││││├─┘││  ├┤  ││  ║  ║╣ ╚═╗╚═╗  ───│
-    //  └─    ┴┘└┘└─┘┴─┘└─┘─┴┘┴┘└┘└─┘  ╚═╝╚═╝╚═╝  └┘   └─┘└─┘┴ ┴┴  ┴┴─┘└─┘─┴┘  ╩═╝╚═╝╚═╝╚═╝    ─┘
     devStyles: {
       options: {
         startTag: '<!--STYLES-->',
@@ -163,13 +148,7 @@ module.exports = function(grunt) {
       }
     },
 
-
-    //  ╔═╗╦═╗╔═╗╔═╗╔═╗╔╦╗╔═╗╦╦  ╔═╗╔╦╗  ╦ ╦╔╦╗╔╦╗╦    ╔╦╗╔═╗╔╦╗╔═╗╦  ╔═╗╔╦╗╔═╗╔═╗
-    //  ╠═╝╠╦╝║╣ ║  ║ ║║║║╠═╝║║  ║╣  ║║  ╠═╣ ║ ║║║║     ║ ║╣ ║║║╠═╝║  ╠═╣ ║ ║╣ ╚═╗
-    //  ╩  ╩╚═╚═╝╚═╝╚═╝╩ ╩╩  ╩╩═╝╚═╝═╩╝  ╩ ╩ ╩ ╩ ╩╩═╝   ╩ ╚═╝╩ ╩╩  ╩═╝╩ ╩ ╩ ╚═╝╚═╝
-    //  ┌─    ┌─┐┬  ┬┌─┐┌┐┌┌┬┐  ┌─┐┬┌┬┐┌─┐  ┬  ┌─┐┌┬┐┌─┐┌─┐┬ ┬  ┌┬┐┌─┐┌┬┐┌─┐┬  ┌─┐┌┬┐┌─┐┌─┐    ─┐
-    //  │───  │  │  │├┤ │││ │───└─┐│ ││├┤   │  │ │ ││├─┤└─┐├─┤   │ ├┤ │││├─┘│  ├─┤ │ ├┤ └─┐  ───│
-    //  └─    └─┘┴─┘┴└─┘┘└┘ ┴   └─┘┴─┴┘└─┘  ┴─┘└─┘─┴┘┴ ┴└─┘┴ ┴   ┴ └─┘┴ ┴┴  ┴─┘┴ ┴ ┴ └─┘└─┘    ─┘
+    // Bring in JST template object
     devTpl: {
       options: {
         startTag: '<!--TEMPLATES-->',
@@ -182,32 +161,123 @@ module.exports = function(grunt) {
         'views/**/*.html': ['.tmp/public/jst.js'],
         'views/**/*.ejs': ['.tmp/public/jst.js']
       }
-    }
+    },
 
+    devJsJade: {
+      options: {
+        startTag: '// SCRIPTS',
+        endTag: '// SCRIPTS END',
+        fileTmpl: 'script(src="%s")',
+        appRoot: '.tmp/public'
+      },
+      files: {
+        'views/**/*.jade': require('../pipeline').jsFilesToInject
+      }
+    },
+
+    devJsRelativeJade: {
+      options: {
+        startTag: '// SCRIPTS',
+        endTag: '// SCRIPTS END',
+        fileTmpl: 'script(src="%s")',
+        appRoot: '.tmp/public',
+        relative: true
+      },
+      files: {
+        'views/**/*.jade': require('../pipeline').jsFilesToInject
+      }
+    },
+
+    prodJsJade: {
+      options: {
+        startTag: '// SCRIPTS',
+        endTag: '// SCRIPTS END',
+        fileTmpl: 'script(src="%s")',
+        appRoot: '.tmp/public'
+      },
+      files: {
+        'views/**/*.jade': ['.tmp/public/min/production.min.js']
+      }
+    },
+
+    prodJsRelativeJade: {
+      options: {
+        startTag: '// SCRIPTS',
+        endTag: '// SCRIPTS END',
+        fileTmpl: 'script(src="%s")',
+        appRoot: '.tmp/public',
+        relative: true
+      },
+      files: {
+        'views/**/*.jade': ['.tmp/public/min/production.min.js']
+      }
+    },
+
+    devStylesJade: {
+      options: {
+        startTag: '// STYLES',
+        endTag: '// STYLES END',
+        fileTmpl: 'link(rel="stylesheet", href="%s")',
+        appRoot: '.tmp/public'
+      },
+
+      files: {
+        'views/**/*.jade': require('../pipeline').cssFilesToInject
+      }
+    },
+
+    devStylesRelativeJade: {
+      options: {
+        startTag: '// STYLES',
+        endTag: '// STYLES END',
+        fileTmpl: 'link(rel="stylesheet", href="%s")',
+        appRoot: '.tmp/public',
+        relative: true
+      },
+
+      files: {
+        'views/**/*.jade': require('../pipeline').cssFilesToInject
+      }
+    },
+
+    prodStylesJade: {
+      options: {
+        startTag: '// STYLES',
+        endTag: '// STYLES END',
+        fileTmpl: 'link(rel="stylesheet", href="%s")',
+        appRoot: '.tmp/public'
+      },
+      files: {
+        'views/**/*.jade': ['.tmp/public/min/production.min.css']
+      }
+    },
+
+    prodStylesRelativeJade: {
+      options: {
+        startTag: '// STYLES',
+        endTag: '// STYLES END',
+        fileTmpl: 'link(rel="stylesheet", href="%s")',
+        appRoot: '.tmp/public',
+        relative: true
+      },
+      files: {
+        'views/**/*.jade': ['.tmp/public/min/production.min.css']
+      }
+    },
+
+    // Bring in JST template object
+    devTplJade: {
+      options: {
+        startTag: '// TEMPLATES',
+        endTag: '// TEMPLATES END',
+        fileTmpl: 'script(type="text/javascript", src="%s")',
+        appRoot: '.tmp/public'
+      },
+      files: {
+        'views/**/*.jade': ['.tmp/public/jst.js']
+      }
+    }
   });
 
-  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  // This Grunt plugin is part of the default asset pipeline in Sails,
-  // so it's already been automatically loaded for you at this point.
-  //
-  // Of course, you can always remove this Grunt plugin altogether by
-  // deleting this file.  But check this out: you can also use your
-  // _own_ custom version of this Grunt plugin.
-  //
-  // Here's how:
-  //
-  // 1. Install it as a local dependency of your Sails app:
-  //    ```
-  //    $ npm install grunt-sails-linker --save-dev --save-exact
-  //    ```
-  //
-  //
-  // 2. Then uncomment the following code:
-  //
-  // ```
-  // // Load Grunt plugin from the node_modules/ folder.
-  // grunt.loadNpmTasks('grunt-sails-linker');
-  // ```
-  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+  grunt.loadNpmTasks('grunt-sails-linker');
 };

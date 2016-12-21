@@ -9,11 +9,11 @@
  * Any policy file (e.g. `api/policies/authenticated.js`) can be accessed
  * below by its filename, minus the extension, (e.g. "authenticated")
  *
- * For more information on configuring policies, check out:
- * http://sailsjs.com/config/policies
+ * For more information on how policies work, see:
+ * http://sailsjs.org/#!/documentation/concepts/Policies
  *
- * Or for more about how policies work in general, see:
- * http://sailsjs.com/docs/concepts/policies
+ * For more information on configuring policies, check out:
+ * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.policies.html
  */
 
 
@@ -34,18 +34,18 @@ module.exports.policies = {
   * and its actions                                                          *
   *                                                                          *
   ***************************************************************************/
-  // RabbitController: {
+	// RabbitController: {
 
-    // Apply the `false` policy as the default for all of RabbitController's actions
-    // (`false` prevents all access, which ensures that nothing bad happens to our rabbits)
-    // '*': false,
+		// Apply the `false` policy as the default for all of RabbitController's actions
+		// (`false` prevents all access, which ensures that nothing bad happens to our rabbits)
+		// '*': false,
 
-    // For the action `nurture`, apply the 'isRabbitMother' policy
-    // (this overrides `false` above)
-    // nurture  : 'isRabbitMother',
+		// For the action `nurture`, apply the 'isRabbitMother' policy
+		// (this overrides `false` above)
+		// nurture	: 'isRabbitMother',
 
-    // Apply the `isNiceToAnimals` AND `hasRabbitFood` policies
-    // before letting any users feed our rabbits
-    // feed : ['isNiceToAnimals', 'hasRabbitFood']
-  // }
+		// Apply the `isNiceToAnimals` AND `hasRabbitFood` policies
+		// before letting any users feed our rabbits
+		// feed : ['isNiceToAnimals', 'hasRabbitFood']
+	// }
 };

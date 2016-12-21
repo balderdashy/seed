@@ -1,5 +1,5 @@
 /**
- * `tasks/register/syncAssets.js`
+ * `syncAssets`
  *
  * ---------------------------------------------------------------
  *
@@ -7,7 +7,7 @@
  * it is a helper called by the `watch` task (`tasks/config/watch.js`).
  *
  * For more information see:
- *   http://sailsjs.com/anatomy/tasks/register/sync-assets-js
+ *   http://sailsjs.org/documentation/anatomy/my-app/tasks/register/sync-assets-js
  *
  */
 module.exports = function(grunt) {

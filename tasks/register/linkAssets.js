@@ -1,5 +1,5 @@
 /**
- * `tasks/register/linkAssets.js`
+ * `linkAssets`
  *
  * ---------------------------------------------------------------
  *
@@ -8,13 +8,16 @@
  * (but only if the `grunt-sails-linker` package is in use).
  *
  * For more information see:
- *   http://sailsjs.com/anatomy/tasks/register/link-assets-js
+ *   http://sailsjs.org/documentation/anatomy/my-app/tasks/register/link-assets-js
  *
  */
 module.exports = function(grunt) {
   grunt.registerTask('linkAssets', [
     'sails-linker:devJs',
     'sails-linker:devStyles',
-    'sails-linker:devTpl'
+    'sails-linker:devTpl',
+    'sails-linker:devJsJade',
+    'sails-linker:devStylesJade',
+    'sails-linker:devTplJade'
   ]);
 };

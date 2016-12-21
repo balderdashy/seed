@@ -1,5 +1,5 @@
 /**
- * `tasks/register/linkAssetsBuildProd.js`
+ * `linkAssetsBuildProd`
  *
  * ---------------------------------------------------------------
  *
@@ -7,13 +7,16 @@
  * it is a helper called by the `buildProd` tasklist.
  *
  * For more information see:
- *   http://sailsjs.com/anatomy/tasks/register/link-assets-build-prod-js
+ *   http://sailsjs.org/documentation/anatomy/my-app/tasks/register/link-assets-build-prod-js
  *
  */
 module.exports = function(grunt) {
   grunt.registerTask('linkAssetsBuildProd', [
     'sails-linker:prodJsRelative',
     'sails-linker:prodStylesRelative',
-    'sails-linker:devTpl'
+    'sails-linker:devTpl',
+    'sails-linker:prodJsRelativeJade',
+    'sails-linker:prodStylesRelativeJade',
+    'sails-linker:devTplJade'
   ]);
 };
