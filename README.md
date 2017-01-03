@@ -21,7 +21,7 @@ If you have questions or are having trouble, click [here](http://sailsjs.com/sup
 
 ## Contributing
 
-Please observe the guidelines and conventions laid out in the [Sails project contribution guide](http://sailsjs.com/contribute) when opening issues or submitting pull requests.
+Please observe the guidelines and conventions laid out in the [Sails project contribution guide](http://sailsjs.com/documentation/contributing) when opening issues or submitting pull requests.
 
 
 ## License
