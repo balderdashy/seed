@@ -1,15 +1,14 @@
 /**
  * grunt/pipeline.js
  *
- * The order in which your css, javascript, and template files should be
- * compiled and/or injected as <script> or <link> tags.  If you are not
- * relying on automatic asset linking, then you can safely ignore this file.
+ * The order in which your CSS, JavaScript, and client-side template files
+ * injected as <script> or <link> tags.
  *
- * (Note that you can take advantage of Grunt-style wildcard/glob/splat expressions
- * for matching multiple files, and use `!` in front of an expression to ignore files.)
+ * > If you are not relying on automatic asset linking, then you can safely ignore this file.
  *
  * For more information see:
  *   http://sailsjs.com/anatomy/tasks/pipeline.js
+ *
  */
 
 
@@ -128,16 +127,16 @@
  module.exports.cssFilesToInject = cssFilesToInject.map(function(cssPath) {
    // If we're ignoring the file, make sure the ! is at the beginning of the path
    if (cssPath[0] === '!') {
-     return require('path').join('!.tmp/public/', cssPath.substr(1));
+     return require('path').join('!'+tmpPath, cssPath.substr(1));
    }
-   return require('path').join('.tmp/public/', cssPath);
+   return require('path').join(tmpPath, cssPath);
  });
  module.exports.jsFilesToInject = jsFilesToInject.map(function(jsPath) {
    // If we're ignoring the file, make sure the ! is at the beginning of the path
    if (jsPath[0] === '!') {
-     return require('path').join('!.tmp/public/', jsPath.substr(1));
+     return require('path').join('!'+tmpPath, jsPath.substr(1));
    }
-   return require('path').join('.tmp/public/', jsPath);
+   return require('path').join(tmpPath, jsPath);
  });
  module.exports.templateFilesToInject = templateFilesToInject.map(function(tplPath) {
    // If we're ignoring the file, make sure the ! is at the beginning of the path

@@ -13,9 +13,9 @@ module.exports.globals = {
 
   /****************************************************************************
   *                                                                           *
-  * Expose the locally-installed `lodash` as a global variable (`_`), making  *
-  * it accessible throughout your app.  Or use `false` instead to disable     *
-  * this entirely.  (See the link above for help.)                            *
+  * Whether to expose the locally-installed `lodash` as a global variable     *
+  * (`_`), making  it accessible throughout your app.                         *
+  * (See the link above for help.)                                            *
   *                                                                           *
   ****************************************************************************/
 
@@ -23,9 +23,9 @@ module.exports.globals = {
 
   /****************************************************************************
   *                                                                           *
-  * Expose the locally-installed `async` as a global variable (`async`),      *
-  * making it accessible throughout your app.  Or use `false` instead to      *
-  * disable this entirely.  (See the link above for help.)                    *
+  * Whether to expose the locally-installed `async` as a global variable      *
+  * (`async`), making it accessible throughout your app.                      *
+  * (See the link above for help.)                                            *
   *                                                                           *
   ****************************************************************************/
 
@@ -47,6 +47,6 @@ module.exports.globals = {
   *                                                                           *
   ****************************************************************************/
 
-  sails: true
+  sails: true,
 
 };

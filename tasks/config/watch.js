@@ -3,12 +3,7 @@
  *
  * ---------------------------------------------------------------
  *
- * Run predefined tasks whenever watched file patterns are added, changed or deleted.
- *
- * Watch for changes on:
- * - files in the `assets` folder
- * - the `tasks/pipeline.js` file
- * and re-run the appropriate tasks.
+ * Run predefined tasks whenever certain files are added, changed or deleted.
  *
  * For more information, see:
  *   http://sailsjs.com/anatomy/tasks/config/watch-js

@@ -16,15 +16,13 @@ setTimeout(function sunrise () {
     <h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
   </div>
   <div class="main container clearfix">
-    <!-- <h1>Getting started</h1>
-    <p>Don't worry, we've got your back.</p> -->
     <ul class="getting-started">
       <li class="clearfix">
         <div class="step">
           <div class="sprite one"></div>
           <h3>Generate a REST API.</h3>
           <p>
-            Run <code>sails generate api user</code>.  This will create two files: a <a href="http://sailsjs.com/docs/concepts/models-and-orm">model</a> <code class="pocket">api/models/User.js</code> and a <a href="http://sailsjs.com/docs/concepts/controllers">controller</a><code class="pocket">api/controllers/UserController.js</code>.
+            Run <code>sails generate api user</code>.  This will create two files: a <a href="http://sailsjs.com/documentation/concepts/models-and-orm">model</a> <code class="pocket">api/models/User.js</code> and a <a href="http://sailsjs.com/documentation/concepts/actions-and-controllers">controller</a><code class="pocket">api/controllers/UserController.js</code>.
           </p>
         </div>
       </li>
@@ -35,7 +33,7 @@ setTimeout(function sunrise () {
             Lift your app.
           </h3>
           <p>
-            Run <code>sails lift</code> to start up your app server.  If you visit <a target="_blank" href="http://localhost:<%= sails.config.port || 1337%>/user"><code>http://localhost:<%= sails.config.port || 1337%>/user</code></a> in your browser, you'll see a <a href="http://sailsjs.com/docs/reference/blueprint-api">WebSocket-compatible</a> user API.
+            Run <code>sails lift</code> to start up your app server.  If you visit <a href="http://localhost:1337/user"><code>http://localhost:1337/user</code></a> in your browser, you'll see a <a href="http://sailsjs.com/documentation/reference/blueprint-api">WebSocket-compatible</a> user API.
           </p>
         </div>
       </li>
@@ -45,26 +43,27 @@ setTimeout(function sunrise () {
           <h3>
             Dive in.
           </h3>
-          <p>Blueprints are just the beginning.  You'll probably also want to learn how to customize your app's <a href="http://sailsjs.com/docs/concepts/routes">routes</a>, set up <a href="http://sailsjs.com/docs/concepts/policies">security policies</a>, configure your <a href="http://sailsjs.com/docs/reference/configuration/sails-config-datastores">data sources</a>, and build custom <a target="_blank" href="http://sailsjs.com/docs/concepts/controllers">controller actions</a>. For more help getting started, check out the links on this page.</p>
+          <p>Blueprints are just the beginning.  You'll probably also want to learn how to customize your app's <a href="http://sailsjs.com/documentation/concepts/routes">routes</a>, set up <a href="http://sailsjs.com/documentation/concepts/policies">security policies</a>, configure your <a href="http://sailsjs.com/documentation/reference/configuration/sails-config-datastores">data sources</a>, and build custom <a target="_blank" href="http://sailsjs.com/documentation/concepts/actions-and-controllers">controller actions</a>. For more help getting started, check out the links on this page.</p>
 
         </div>
       </li>
     </ul>
     <div class="links">
-      <!-- <h3>Links</h3> -->
       <ul class="link-list">
 
         <h4>Documentation</h4>
-        <a target="_blank" href="http://sailsjs.com/docs/anatomy"><li>App structure</li></a>
-        <a target="_blank" href="http://sailsjs.com/docs/reference"><li>Reference</li></a>
-        <a target="_blank" href="http://sailsjs.com/docs/concepts"><li>Concepts</li></a>
-        <a target="_blank" href="http://sailsjs.com/docs/concepts/extending-sails/adapters"><li>Supported databases</li></a>
+        <li><a target="_blank" href="http://sailsjs.com/documentation/anatomy">About your app</a></li>
+        <li><a target="_blank" href="http://sailsjs.com/documentation/reference">Reference</a></li>
+        <li><a target="_blank" href="http://sailsjs.com/documentation/concepts/extending-sails/adapters/available-adapters">Supported databases</a></li>
+        <li><a target="_blank" href="http://sailsjs.com/documentation/concepts/upgrading">Version notes</a></li>
 
-        <h4>Help</h4>
-        <a target="_blank" href="https://sailsjs.com/support"><li>Support</li></a>
-        <a target="_blank" href="http://sailsjs.com/docs/concepts/deployment"><li>Deploy your app</li></a>
-        <a target="_blank" href="http://stackoverflow.com/search?q=sails.js"><li>Ask a question on StackOverflow</li></a>
-        <a target="_blank" href="https://sailsjs.com/books"><li>Books</li></a>
+        <h4>More resources</h4>
+        <li><a target="_blank" href="http://sailsjs.com/flagship">Sails Flagship</a></li>
+        <li><a target="_blank" href="http://sailsjs.com/support">Community support options</a></li>
+        <li><a target="_blank" href="http://sailsjs.com/documentation/concepts/deployment">Deployment tips</a></li>
+        <li><a target="_blank" href="http://sailsjs.com/documentation/contributing">Contribute</a></li>
+        <li><a target="_blank" href="http://sailsjs.com/resources">Logos/artwork</a></li>
+        <li><a target="_blank" href="http://blog.sailsjs.com">News</a></li>
 
       </ul>
     </div>

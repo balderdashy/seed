@@ -1,9 +1,9 @@
 {
-  "name": "seed",
+  "name": "@sailshq/seed",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
-  "keywords": [],
+  "description": "A sample Sails application.",
+  "keywords": ["sails", "seed", "seed-app"],
   "dependencies": {
     "sails": "^1.0.0-17",
     "grunt": "1.0.1",
@@ -23,6 +23,5 @@
     "type": "git",
     "url": "git://github.com/mikermcneil/seed.git"
   },
-  "author": "mikermcneil",
-  "license": ""
+  "license": "MIT"
 }

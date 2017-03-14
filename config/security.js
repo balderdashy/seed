@@ -10,7 +10,7 @@
  * http://sailsjs.com/documentation/concepts/security
  *
  * For additional options and more information, see:
- * http://sailsjs.com/anatomy/config/security-js
+ * http://sailsjs.com/config/security
  */
 
 module.exports.security = {

@@ -5,10 +5,6 @@
  *
  * Compile your LESS files into a CSS stylesheet.
  *
- * By default, only the `assets/styles/importer.less` is compiled.
- * This allows you to control the ordering yourself, i.e. import your
- * dependencies, mixins, variables, resets, etc. before other stylesheets)
- *
  * For more information, see:
  *   http://sailsjs.com/anatomy/tasks/config/less-js
  *

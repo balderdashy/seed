@@ -7,10 +7,6 @@
  * run `sails www` in a production environment, e.g.:
  * `NODE_ENV=production sails www`
  *
- * This generates a folder containing your compiled (and usually minified)
- * assets.  The most common use case for this is bundling up files to
- * deploy to a CDN.
- *
  * For more information see:
  *   http://sailsjs.com/anatomy/tasks/register/build-prod-js
  *
