@@ -7,7 +7,7 @@
  * then be passed in to `uglify` and/or `cssmin` for minification.
  *
  * For more information, see:
- *   http://sailsjs.com/anatomy/tasks/config/concat-js
+ *   https://sailsjs.com/anatomy/tasks/config/concat.js
  *
  */
 module.exports = function(grunt) {

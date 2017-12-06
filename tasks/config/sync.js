@@ -7,7 +7,7 @@
  * smashing anything that's already there.
  *
  * For more information, see:
- *   http://sailsjs.com/anatomy/tasks/config/sync-js
+ *   https://sailsjs.com/anatomy/tasks/config/sync.js
  *
  */
 module.exports = function(grunt) {

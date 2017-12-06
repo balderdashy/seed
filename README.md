@@ -1,13 +1,6 @@
 # Sails.js Seed (Sample App)
 
-A sample [Sails](http://sailsjs.com) application, generated using:
-
-```
-npm install -g sails@balderdashy/sails#87624e7aa9aedddb3c8ee75decd37e4ff2a4ee83
-```
-
-
-And then:
+A sample [Sails v1](http://sailsjs.com) application, generated with:
 
 ```
 sails new seed

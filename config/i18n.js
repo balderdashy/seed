@@ -6,10 +6,10 @@
  * may be an important part of your international strategy.
  *
  * For a complete list of options for Sails' built-in i18n support, see:
- * http://sailsjs.com/config/i-18-n
+ * https://sailsjs.com/config/i-18-n
  *
  * For more info on i18n in Sails in general, check out:
- * http://sailsjs.com/docs/concepts/internationalization
+ * https://sailsjs.com/docs/concepts/internationalization
  */
 
 module.exports.i18n = {

@@ -8,7 +8,7 @@
  * and `endTag`) determine the insertion points.
  *
  * For more information, see:
- *   http://sailsjs.com/anatomy/tasks/config/sails-linker-js
+ *   https://sailsjs.com/anatomy/tasks/config/sails-linker.js
  *
  */
 module.exports = function(grunt) {

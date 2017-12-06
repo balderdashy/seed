@@ -8,7 +8,7 @@
  * file from `assets/styles/importer.less`)
  *
  * For more information, see:
- *   http://sailsjs.com/anatomy/tasks/config/cssmin-js
+ *   https://sailsjs.com/anatomy/tasks/config/cssmin.js
  *
  */
 module.exports = function(grunt) {

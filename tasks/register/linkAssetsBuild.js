@@ -4,7 +4,7 @@
  * ---------------------------------------------------------------
  *
  * For more information see:
- *   http://sailsjs.com/anatomy/tasks/register/link-assets-build-js
+ *   https://sailsjs.com/anatomy/tasks/register/link-assets-build.js
  *
  */
 module.exports = function(grunt) {

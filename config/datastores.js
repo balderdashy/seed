@@ -10,7 +10,7 @@
  *  > Ready to go live?  Head towards `config/env/production.js`.
  *
  * For more information on configuring datastores, check out:
- * http://sailsjs.com/config/datastores
+ * https://sailsjs.com/config/datastores
  */
 
 module.exports.datastores = {
@@ -39,16 +39,16 @@ module.exports.datastores = {
     * Want to use a different database during development?                     *
     *                                                                          *
     * 1. Choose an adapter:                                                    *
-    *    http://sailsjs.com/plugins/databases                                  *
+    *    https://sailsjs.com/plugins/databases                                 *
     *                                                                          *
     * 2. Install it as a dependency of your Sails app.                         *
     *    (For example:  npm install sails-mysql --save)                        *
     *                                                                          *
     * 3. Then pass it in, along with a connection URL.                         *
-    *    (See http://sailsjs.com/config/datastores for help.)                  *
+    *    (See https://sailsjs.com/config/datastores for help.)                 *
     *                                                                          *
     ***************************************************************************/
-    // adapter: require('sails-mysql'),
+    // adapter: 'sails-mysql',
     // url: 'mysql://user:password@host:port/database',
 
   },

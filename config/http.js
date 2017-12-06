@@ -6,7 +6,7 @@
  * (for additional recommended settings, see `config/env/production.js`)
  *
  * For more information on configuration, check out:
- * http://sailsjs.com/config/http
+ * https://sailsjs.com/config/http
  */
 
 module.exports.http = {
@@ -16,7 +16,7 @@ module.exports.http = {
   * Sails/Express middleware to run for every HTTP request.                   *
   * (Only applies to HTTP requests -- not virtual WebSocket requests.)        *
   *                                                                           *
-  * http://sailsjs.com/documentation/concepts/middleware                      *
+  * https://sailsjs.com/documentation/concepts/middleware                     *
   *                                                                           *
   ****************************************************************************/
 
@@ -45,7 +45,7 @@ module.exports.http = {
     *                                                                          *
     * The body parser that will handle incoming multipart HTTP requests.       *
     *                                                                          *
-    * http://sailsjs.com/config/http#?customizing-the-body-parser              *
+    * https://sailsjs.com/config/http#?customizing-the-body-parser             *
     *                                                                          *
     ***************************************************************************/
 

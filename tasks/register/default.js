@@ -9,17 +9,19 @@
  * `sails lift` or `node app` in a development environment.
  *
  * For more information see:
- *   http://sailsjs.com/anatomy/tasks/register/default-js
+ *   https://sailsjs.com/anatomy/tasks/register/default.js
  *
  */
 module.exports = function (grunt) {
 
-  
-    grunt.registerTask('default', [
-      'compileAssets',
-      'linkAssets',
-      'watch'
-    ]);
-  
+
+  grunt.registerTask('default', [
+    // 'polyfill:dev', //« uncomment to ALSO transpile during development (for broader browser compat.)
+    'compileAssets',
+    // 'babel',        //« uncomment to ALSO transpile during development (for broader browser compat.)
+    'linkAssets',
+    'watch'
+  ]);
+
 
 };

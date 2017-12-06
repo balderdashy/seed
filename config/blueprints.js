@@ -3,11 +3,10 @@
  * (sails.config.blueprints)
  *
  * For background on the blueprint API in Sails, check out:
- * http://sailsjs.com/docs/reference/blueprint-api
+ * https://sailsjs.com/docs/reference/blueprint-api
  *
  * For details and more available options, see:
- * http://sailsjs.com/config/blueprints
- *
+ * https://sailsjs.com/config/blueprints
  */
 
 module.exports.blueprints = {
@@ -18,7 +17,7 @@ module.exports.blueprints = {
   *                                                                          *
   ***************************************************************************/
 
-  // actions: true,
+  // actions: false,
 
 
   /***************************************************************************
@@ -33,40 +32,10 @@ module.exports.blueprints = {
   /***************************************************************************
   *                                                                          *
   * Automatically expose CRUD "shortcut" routes to GET requests?             *
-  * (These are enabled by default in development.)                           *
+  * (These are enabled by default in development only.)                      *
   *                                                                          *
   ***************************************************************************/
 
   // shortcuts: true,
-
-
-  /***************************************************************************
-  *                                                                          *
-  * Optional mount path prefix for all implicit blueprint routes.            *
-  *                                                                          *
-  ***************************************************************************/
-
-  // prefix: '',
-
-
-  /***************************************************************************
-  *                                                                          *
-  * Whether to use plural model names in blueprint routes                    *
-  * (e.g. `/users` for the `User` model)                                     *
-  *                                                                          *
-  ***************************************************************************/
-
-  // pluralize: false,
-
-
-  /***************************************************************************
-  *                                                                          *
-  * Automatically enroll sockets requesting the `find` blueprint action to   *
-  * receive special notifications about any new records for the same model.  *
-  * (Only notifies for records created with the `create` blueprint action.)  *
-  *                                                                          *
-  ***************************************************************************/
-
-  // autoWatch: true,
 
 };

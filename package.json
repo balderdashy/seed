@@ -4,18 +4,25 @@
   "version": "0.0.0",
   "description": "A sample Sails application.",
   "keywords": ["sails", "seed", "seed-app"],
-  "dependencies": {
-    "sails": "^1.0.0-17",
+   "dependencies": {
+    "sails": "^1.0.0-41",
     "grunt": "1.0.1",
-    "sails-hook-orm": "^2.0.0-0",
-    "sails-hook-sockets": "^1.0.1",
-    "sails-hook-grunt": "^1.0.4",
+    "sails-hook-orm": "^2.0.0-16",
+    "sails-hook-sockets": "^1.4.0",
+    "sails-hook-grunt": "^2.0.0",
+    "connect-redis": "3.2.0",
+    "socket.io-redis": "4.0.0",
     "lodash": "3.10.1",
     "async": "2.0.1"
   },
+  "devDependencies": {
+    "eslint": "4.11.0"
+  },
   "scripts": {
-    "start": "node app.js",
-    "test": "echo && echo \"* * * * * * * * * * * * * * * * * * * * * * * * * * * \" && echo \"About to run tests...\" && echo && if node ./node_modules/mocha/bin/mocha --timeout 10000 ; then sleep 0.0001; else echo && echo && echo \"- - -\" && echo \"Looks like something went wrong.\" && echo \"|  If you are not sure what to do next, try:\" && echo \"|  npm install mocha@3.0.2 --save-dev --save-exact\" && echo \"|  \" && echo \"|  And then:\" && echo \"|  mkdir test/\" && echo ; fi",
+    "start": "NODE_ENV=production node app.js",
+    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "lint": "node ./node_modules/eslint/bin/eslint . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your code looks good.'",
+    "custom-tests": "echo \"(No other custom tests yet.)\" && echo",
     "debug": "node debug app.js"
   },
   "main": "app.js",
@@ -23,5 +30,8 @@
     "type": "git",
     "url": "git://github.com/mikermcneil/seed.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": "8"
+  }
 }

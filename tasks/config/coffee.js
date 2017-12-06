@@ -7,7 +7,7 @@
  * and generate new `.js` files in `.tmp/public/js`.
  *
  * For more information, see:
- *   http://sailsjs.com/anatomy/tasks/config/coffee-js
+ *   https://sailsjs.com/anatomy/tasks/config/coffee.js
  *
  */
 module.exports = function(grunt) {

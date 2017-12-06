@@ -2,16 +2,16 @@
  * View Engine Configuration
  * (sails.config.views)
  *
- * Server-sent views are a classic and effective way to get your app up
- * and running. Views are normally served from controllers.  Below, you can
+ * Server-sent views are a secure and effective way to get your app up
+ * and running. Views are normally served from actions.  Below, you can
  * configure your templating language/framework of choice and configure
  * Sails' layout support.
  *
  * For details on available options for configuring server-side views, check out:
- * http://sailsjs.com/config/views
+ * https://sailsjs.com/config/views
  *
  * For more background information on views and partials in Sails, check out:
- * http://sailsjs.com/docs/concepts/views
+ * https://sailsjs.com/docs/concepts/views
  */
 
 module.exports.views = {
@@ -29,13 +29,13 @@ module.exports.views = {
 
   /***************************************************************************
   *                                                                          *
-  * The path (relative to the views directory, and without extension) to the *
-  * default layout file to use, or `false` to disable layouts entirely.      *
+  * The path (relative to the views directory, and without extension) to     *
+  * the default layout file to use, or `false` to disable layouts entirely.  *
   *                                                                          *
-  * Note that layouts only work with the built-in view engine!               *
+  * Note that layouts only work with the built-in EJS view engine!           *
   *                                                                          *
   ***************************************************************************/
 
-  // layout: 'layout'
+  layout: 'layouts/layout'
 
 };

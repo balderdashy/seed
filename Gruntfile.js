@@ -1,18 +1,16 @@
 /**
  * Gruntfile
  *
- * This Node script is executed when you run `grunt` or `sails lift`.
- * It's purpose is to load the Grunt tasks in your project's `tasks`
- * folder, and allow you to add and remove tasks as you see fit.
- * For more information on how this works, check out the `README.md`
- * file that was generated in your `tasks` folder.
+ * This Node script is executed when you run `grunt`-- and also when
+ * you run `sails lift` (provided the grunt hook is installed and
+ * hasn't been disabled).
  *
  * WARNING:
  * Unless you know what you're doing, you shouldn't change this file.
- * Check out the `tasks` directory instead.
+ * Check out the `tasks/` directory instead.
  *
  * For more information see:
- *   http://sailsjs.com/anatomy/Gruntfile.js
+ *   https://sailsjs.com/anatomy/Gruntfile.js
  */
 module.exports = function(grunt) {
 

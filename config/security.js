@@ -7,26 +7,26 @@
  * routes require a CSRF token to be included with the request.
  *
  * For an overview of how Sails handles security, see:
- * http://sailsjs.com/documentation/concepts/security
+ * https://sailsjs.com/documentation/concepts/security
  *
  * For additional options and more information, see:
- * http://sailsjs.com/config/security
+ * https://sailsjs.com/config/security
  */
 
 module.exports.security = {
 
-   /***************************************************************************
-   *                                                                          *
-   * CORS is like a more modern version of JSONP-- it allows your application *
-   * to circumvent browsers' same-origin policy, so that the responses from   *
-   * your Sails app hosted on one domain (e.g. example.com) can be received   *
-   * in the client-side JavaScript code from a page you trust hosted on _some *
-   * other_ domain (e.g. trustedsite.net).                                    *
-   *                                                                          *
-   * For additional options and more information, see:                        *
-   * http://sailsjs.com/docs/concepts/security/cors                           *
-   *                                                                          *
-   ***************************************************************************/
+  /***************************************************************************
+  *                                                                          *
+  * CORS is like a more modern version of JSONP-- it allows your application *
+  * to circumvent browsers' same-origin policy, so that the responses from   *
+  * your Sails app hosted on one domain (e.g. example.com) can be received   *
+  * in the client-side JavaScript code from a page you trust hosted on _some *
+  * other_ domain (e.g. trustedsite.net).                                    *
+  *                                                                          *
+  * For additional options and more information, see:                        *
+  * https://sailsjs.com/docs/concepts/security/cors                          *
+  *                                                                          *
+  ***************************************************************************/
 
   // cors: {
   //   allRoutes: false,
@@ -45,7 +45,7 @@ module.exports.security = {
   * To enable CSRF protection, set this to `true`.                            *
   *                                                                           *
   * For more information, see:                                                *
-  * http://sailsjs.com/docs/concepts/security/csrf                            *
+  * https://sailsjs.com/docs/concepts/security/csrf                           *
   *                                                                           *
   ****************************************************************************/
 

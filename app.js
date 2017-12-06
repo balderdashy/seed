@@ -4,20 +4,20 @@
  * Use `app.js` to run your app without `sails lift`.
  * To start the server, run: `node app.js`.
  *
- * This is handy in situations where the sails CLI is not relevant or useful.
+ * This is handy in situations where the sails CLI is not relevant or useful,
+ * such as when you deploy to a server, or a PaaS like Heroku.
  *
  * For example:
  *   => `node app.js`
+ *   => `npm start`
  *   => `forever start app.js`
  *   => `node debug app.js`
- *   => `modulus deploy`
- *   => `heroku scale`
  *
- * The same command-line arguments are supported, e.g.:
- * `node app.js --silent --port=80 --prod`
+ * The same command-line arguments and env vars are supported, e.g.:
+ * `NODE_ENV=production node app.js --port=80 --verbose`
  *
  * For more information see:
- *   http://sailsjs.com/anatomy/app.js
+ *   https://sailsjs.com/anatomy/app.js
  */
 
 
@@ -34,16 +34,18 @@ var rc;
 try {
   sails = require('sails');
   rc = require('sails/accessible/rc');
-} catch (e) {
+} catch (err) {
   console.error('Encountered an error when attempting to require(\'sails\'):');
-  console.error(e.stack);
+  console.error(err.stack);
   console.error('--');
-  console.error('To run an app using `node app.js`, you usually need to have a version of `sails` installed in the same directory as your app.');
-  console.error('To do that, run `npm install sails`');
+  console.error('To run an app using `node app.js`, you need to have Sails installed');
+  console.error('locally (`./node_modules/sails`).  To do that, just make sure you\'re');
+  console.error('in the same directory as your app and run `npm install`.');
   console.error();
-  console.error('Alternatively, if you have sails installed globally (i.e. you did `npm install -g sails`), you can use `sails lift`.');
-  console.error('When you run `sails lift`, your app will still use a local `./node_modules/sails` dependency if it exists,');
-  console.error('but if it doesn\'t, the app will run with the global sails instead!');
+  console.error('If Sails is installed globally (i.e. `npm install -g sails`) you can');
+  console.error('also run this app with `sails lift`.  Running with `sails lift` will');
+  console.error('not run this file (`app.js`), but it will do exactly the same thing.');
+  console.error('(It even uses your app directory\'s local Sails install, if possible.)');
   return;
 }//-•
 

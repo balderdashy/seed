@@ -4,7 +4,7 @@
  * ---------------------------------------------------------------
  *
  * For more information see:
- *   http://sailsjs.com/anatomy/tasks/register/compile-assets-js
+ *   https://sailsjs.com/anatomy/tasks/register/compile-assets.js
  *
  */
 module.exports = function(grunt) {

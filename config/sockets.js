@@ -6,7 +6,7 @@
  * (for additional recommended settings, see `config/env/production.js`)
  *
  * For all available options, see:
- * http://sailsjs.com/config/sockets
+ * https://sailsjs.com/config/sockets
  */
 
 module.exports.sockets = {
@@ -23,7 +23,7 @@ module.exports.sockets = {
   * > the same array of transports, sockets will not work properly.          *
   * >                                                                        *
   * > For more info, see:                                                    *
-  * > http://sailsjs.com/docs/reference/web-sockets/socket-client            *
+  * > https://sailsjs.com/docs/reference/web-sockets/socket-client           *
   *                                                                          *
   ***************************************************************************/
 
@@ -38,7 +38,7 @@ module.exports.sockets = {
   * socket is allowed to connect, when the initial socket.io handshake is    *
   * performed with the server.                                               *
   *                                                                          *
-  * http://sailsjs.com/config/sockets#?beforeconnect                         *
+  * https://sailsjs.com/config/sockets#?beforeconnect                        *
   *                                                                          *
   ***************************************************************************/
 
@@ -70,13 +70,13 @@ module.exports.sockets = {
 
 
   /***************************************************************************
-   *                                                                          *
-   * Whether to expose a 'GET /__getcookie' route that sets an HTTP-only      *
-   * session cookie.                                                          *
-   *                                                                          *
-   ***************************************************************************/
+  *                                                                          *
+  * Whether to expose a 'GET /__getcookie' route that sets an HTTP-only      *
+  * session cookie.                                                          *
+  *                                                                          *
+  ***************************************************************************/
 
-   // grant3rdPartyCookie: true,
+  // grant3rdPartyCookie: true,
 
 
 };

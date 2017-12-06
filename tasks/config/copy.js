@@ -8,7 +8,7 @@
  * and also for further pre-processing by other Grunt tasks.
  *
  * For more information, see:
- *   http://sailsjs.com/anatomy/tasks/config/copy-js
+ *   https://sailsjs.com/anatomy/tasks/config/copy.js
  *
  */
 module.exports = function(grunt) {

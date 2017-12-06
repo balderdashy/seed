@@ -7,7 +7,7 @@
  * (conventionally a hidden directory called `.tmp/public`).
  *
  * For more information, see:
- *   http://sailsjs.com/anatomy/tasks/config/clean-js
+ *   https://sailsjs.com/anatomy/tasks/config/clean.js
  *
  */
 module.exports = function(grunt) {

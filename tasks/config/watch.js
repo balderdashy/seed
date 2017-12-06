@@ -6,7 +6,7 @@
  * Run predefined tasks whenever certain files are added, changed or deleted.
  *
  * For more information, see:
- *   http://sailsjs.com/anatomy/tasks/config/watch-js
+ *   https://sailsjs.com/anatomy/tasks/config/watch.js
  *
  */
 module.exports = function(grunt) {

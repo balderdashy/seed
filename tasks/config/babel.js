@@ -1,25 +1,29 @@
 /**
- * `tasks/config/less`
+ * `tasks/config/babel`
  *
  * ---------------------------------------------------------------
  *
- * Compile your LESS files into a CSS stylesheet.
+ * Transpile >=ES6 code for broader browser compatibility.
  *
  * For more information, see:
- *   https://sailsjs.com/anatomy/tasks/config/less.js
+ *   https://sailsjs.com/anatomy/tasks/config/babel.js
  *
  */
 module.exports = function(grunt) {
 
-  grunt.config.set('less', {
-    dev: {
-      files: [{
-        expand: true,
-        cwd: 'assets/styles/',
-        src: ['importer.less'],
-        dest: '.tmp/public/styles/',
-        ext: '.css'
-      }]
+  grunt.config.set('babel', {
+    dist: {
+      options: {
+        presets: [require('sails-hook-grunt/accessible/babel-preset-env')]
+      },
+      files: [
+        {
+          expand: true,
+          cwd: '.tmp/public',
+          src: ['js/**/*.js'],
+          dest: '.tmp/public'
+        }
+      ]
     }
   });
 
@@ -35,7 +39,7 @@ module.exports = function(grunt) {
   //
   // 1. Install it as a local dependency of your Sails app:
   //    ```
-  //    $ npm install grunt-contrib-less --save-dev --save-exact
+  //    $ npm install grunt-babel --save-dev --save-exact
   //    ```
   //
   //
@@ -43,7 +47,7 @@ module.exports = function(grunt) {
   //
   // ```
   // // Load Grunt plugin from the node_modules/ folder.
-  // grunt.loadNpmTasks('grunt-contrib-less');
+  // grunt.loadNpmTasks('grunt-babel');
   // ```
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

@@ -6,7 +6,7 @@
  * Precompile HTML templates using Underscore/Lodash notation.
  *
  * For more information, see:
- *   http://sailsjs.com/anatomy/tasks/config/jst-js
+ *   https://sailsjs.com/anatomy/tasks/config/jst.js
  *
  */
 
