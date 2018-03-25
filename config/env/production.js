@@ -13,7 +13,7 @@
  * > If you're using git as a version control solution for your Sails app,
  * > this file WILL BE COMMITTED to your repository by default, unless you add
  * > it to your .gitignore file.  If your repository will be publicly viewable,
- * > don't add private/sensitive data (like API keys / db passwords) to this file!
+ * > don't add private/sensitive data (like API secrets / db passwords) to this file!
  *
  * For more best practices and tips, see:
  * https://sailsjs.com/docs/concepts/deployment
@@ -64,7 +64,7 @@ module.exports = {
       * More adapter-specific options                                             *
       *                                                                           *
       * > For example, for some hosted PostgreSQL providers (like Heroku), the    *
-      * > extra `ssl: true` option is mandatory and must be provided here.        *
+      * > extra `ssl: true` option is mandatory and must be provided.             *
       *                                                                           *
       * More info:                                                                *
       * https://sailsjs.com/config/datastores                                     *
@@ -150,7 +150,6 @@ module.exports = {
     cors: {
       // allowOrigins: [
       //   'https://example.com',
-      //   'https://staging.example.com',
       // ]
     },
 
@@ -376,7 +375,7 @@ module.exports = {
     internalEmailAddress: 'support@example.com',
 
     // mailgunDomain: 'mg.example.com',
-    // mailgunApiKey: 'key-prod_fake_bd32301385130a0bafe030c',
+    // mailgunSecret: 'key-prod_fake_bd32301385130a0bafe030c',
     // stripeSecret: 'sk_prod__fake_Nfgh82401348jaDa3lkZ0d9Hm',
     //--------------------------------------------------------------------------
     // /\   OR, to avoid checking them in to version control, you might opt to
@@ -385,7 +384,7 @@ module.exports = {
     // For example:
     // ```
     // sails_custom__mailgunDomain=mg.example.com
-    // sails_custom__mailgunApiKey=key-prod_fake_bd32301385130a0bafe030c
+    // sails_custom__mailgunSecret=key-prod_fake_bd32301385130a0bafe030c
     // sails_custom__stripeSecret=sk_prod__fake_Nfgh82401348jaDa3lkZ0d9Hm
     // ```
     //--------------------------------------------------------------------------

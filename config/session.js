@@ -6,7 +6,7 @@
  * (for additional recommended settings, see `config/env/production.js`)
  *
  * For all available options, see:
- * http://sailsjs.com/config/session
+ * https://sailsjs.com/config/session
  */
 
 module.exports.session = {
@@ -18,7 +18,7 @@ module.exports.session = {
   * of your users, forcing them to log in again.                             *
   *                                                                          *
   ***************************************************************************/
-  secret: '5f3816c8f572a55210e826ac4b3b472b',
+  secret: '2d8d273a6450415fd31892eb2b005b5a',
 
 
   /***************************************************************************
@@ -29,7 +29,7 @@ module.exports.session = {
   * session management when responding to simple requests for static assets, *
   * like images or stylesheets.)                                             *
   *                                                                          *
-  * http://sailsjs.com/config/session                                        *
+  * https://sailsjs.com/config/session                                       *
   *                                                                          *
   ***************************************************************************/
   // isSessionDisabled: function (req){

@@ -9,16 +9,27 @@
  *   https://sailsjs.com/anatomy/assets/styles/importer-less
  */
 
+// Overall styleguide
+@import 'styleguide/index.less';
 
-// For example:
-//
-// @import 'variables/colors.less';
-// @import 'mixins/foo.less';
-// @import 'mixins/bar.less';
-// @import 'mixins/baz.less';
-//
-// @import 'styleguide.less';
-// @import 'pages/login.less';
-// @import 'pages/signup.less';
-//
-// etc.
+// Overall layout
+@import 'layout.less';
+
+// Per-page styles
+@import 'pages/homepage.less';
+@import 'pages/welcome.less';
+@import 'pages/entrance/signup.less';
+@import 'pages/entrance/confirmed-email.less';
+@import 'pages/entrance/login.less';
+@import 'pages/entrance/forgot-password.less';
+@import 'pages/entrance/new-password.less';
+@import 'pages/account/account-overview.less';
+@import 'pages/account/edit-password.less';
+@import 'pages/account/edit-profile.less';
+@import 'pages/legal/terms.less';
+@import 'pages/legal/privacy.less';
+@import 'pages/faq.less';
+@import 'pages/contact.less';
+@import 'pages/404.less';
+@import 'pages/500.less';
+@import 'pages/498.less';

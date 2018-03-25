@@ -1,106 +1,112 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>New Sails App</title>
+    <title>NEW_APP_NAME</title>
 
-    <!-- Viewport mobile tag for sensible mobile support -->
+    <% /* Viewport tag for sensible mobile support */ %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <% /* Script tags should normally be included further down the page- but scripts
+    that load fonts are a special exception to the rule.  (We include them up here
+    above the «body» to prevent the page flickering when fonts load.)  */ %>
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/96cbd61ead.js"></script>
 
-    <!--
-        Stylesheets and Preprocessors
-        ==============================
+    <% /*
+        Stylesheets
+        ========================
 
-        You can always bring in CSS files manually with `<link>` tags, or asynchronously
-        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
-        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+        Stylesheets can be hard-coded as `<link>` tags, automatically injected
+        by the asset pipeline between "STYLES" and "STYLES END", or both.
+        (https://sailsjs.com/docs/concepts/assets/task-automation)
+    */ %>
 
-        By default, stylesheets from your `assets/styles` folder are included
-        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
-        are supported. In production, your styles will be minified and concatenated into
-        a single file.
-
-        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
-        For example, here are a few things you could do:
-
-            + Change the order of your CSS files
-            + Import stylesheets from other directories
-            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
-    -->
-
+    <% /* Auto-injected <link> tags: */ %>
     <!--STYLES-->
     <!--STYLES END-->
   </head>
 
   <body>
-    <%- body %>
+    <div id="page-wrap">
+      <header id="page-header" class="navbar navbar-expand-sm navbar-dark bg-dark flex-column flex-md-row justify-content-between">
+        <a class="navbar-brand mr-0" href="/">NEW_APP_NAME</a>
+        <div class="navbar-nav flex-row">
+          <!-- LOGGED-IN NAVIGATION -->
+          <% if(me) { %>
+          <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/contact">Help</a>
+          <!-- Only in desktop nav -->
+          <div class="nav-item dropdown d-none d-sm-block">
+            <a class="nav-link dropdown-toggle" id="header-account-menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+            <div class="dropdown-menu account-menu" aria-labelledby="header-account-menu-link">
+              <a class="dropdown-item" href="/account">Settings</a>
+              <a class="dropdown-item" href="/logout">Sign out</a>
+            </div>
+          </div>
+          <!-- Only in mobile nav -->
+          <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/account">Account Settings</a>
+          <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/logout">Sign out</a>
+          <% } else { %>
+          <!-- LOGGED-OUT NAVIGATION -->
+          <a class="nav-item nav-link ml-2 ml-md-0 mr-2" href="/faq">FAQ</a>
+          <a class="nav-item nav-link ml-2 ml-md-0 mr-2" href="/login">Log in</a>
+          <!-- Only in desktop nav -->
+          <div class="form-inline d-none ml-2 d-md-block" >
+            <a class="btn btn-outline-info" href="/signup">Sign up</a>
+          </div>
+          <!-- Only in mobile nav -->
+          <a class="nav-item nav-link text-info ml-2 d-block d-md-none" href="/signup">Sign up</a>
+          <% } %>
+        </div>
+      </header>
+
+      <!-- Alert if email has not been confirmed -->
+      <% if(me&&me.emailChangeCandidate) { %>
+      <div class="container-fluid">
+        <div class="alert alert-secondary mt-2" role="alert">
+        Your updated email address needs verification. Until you click the link sent to <strong><%= me.emailChangeCandidate %></strong>, you'll still need to sign in as <strong><%= me.emailAddress %></strong>.
+        </div>
+      </div>
+      <% } else if(me&&me.emailStatus === 'unconfirmed') { %>
+      <div class="container-fluid">
+        <div class="alert alert-secondary mt-2" role="alert">
+        Your email address still needs verification. Your account access may be limited until you click the link sent to <strong><%= me.emailChangeCandidate ? me.emailChangeCandidate : me.emailAddress%></strong>.
+        </div>
+      </div>
+      <% } %>
+
+      <%- body %>
+
+      <footer id="page-footer" class="navbar navbar-light justify-content-between flex-row-reverse">
+        <div class="nav">
+          <small class="nav-item"><a class="nav-link text-info" href="/contact">Contact us</a></small>
+          <small class="nav-item"><a class="nav-link text-info" href="/legal/terms">Terms of Use</a></small>
+          <small class="nav-item"><a class="nav-link text-info" href="/legal/privacy">Privacy policy</a></small>
+          <% if(me) { %>
+          <small class="nav-item"><a class="nav-link text-info" href="/logout">Sign out</a></small>
+          <% } %>
+        </div>
+        <small class="copy">Copyright &copy; 2018 NEW_APP_COMPANY. <br class="xs-only"/>All rights reserved.</small>
+      </footer>
+    </div>
 
 
-
-    <!--
-        Client-side Templates
-        ========================
-
-        HTML templates are important prerequisites of modern, rich client applications.
-        To work their magic, frameworks like React, Vue.js, Angular, Ember, and Backbone
-        require that you load these templates client-side.
-
-        By default, your Gruntfile is configured to automatically load and precompile
-        client-side JST templates in your `assets/templates` folder, then
-        include them here automatically (between TEMPLATES and TEMPLATES END).
-
-        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
-        For example, here are a few things you could do:
-
-            + Import templates from other directories
-            + Use a different view engine (handlebars, dust, pug/jade, etc.)
-            + Internationalize your client-side templates using a server-side
-              stringfile before they're served.
-    -->
-
-    <!--TEMPLATES-->
-    <!--TEMPLATES END-->
-
-
-    <!--
-        Server-side View Locals
-        ========================
-
-        Sometimes, it's convenient to get access to your server-side view locals from
-        client-side JavaScript.  This can improve page load times, remove the need for
-        extra AJAX requests, and make your client-side code easier to understand and
-        to maintain.  Sails provides a simple mechanism for accessing dynamic view
-        locals: the "exposeLocalsToBrowser()" view partial.
-
-        For more information on using this built-in feature, see:
-        https://sailsjs.com/docs/concepts/views/locals#?escaping-untrusted-data-using-exposelocalstobrowser
-
-    -->
-
-
-    <!--
-
-      Client-side Javascript
+    <% /*
+      Client-side JavaScript
       ========================
 
-      You can always bring in JS files manually with `script` tags, or asynchronously
-      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
-      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+      Scripts can be hard-coded as <script> tags, automatically injected
+      by the asset pipeline between "SCRIPTS" and "SCRIPTS END", or both.
+      (https://sailsjs.com/docs/concepts/assets/task-automation)
+    */ %>
 
-      By default, files in your `assets/js` folder are included here
-      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
-      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
-      and concatenated into a single file.
+    <% /* Load Stripe Checkout */ %>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
 
-      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
-      For example, here are a few things you could do:
+    <% /* Delete the global `self` to help avoid client-side bugs.
+    (see https://developer.mozilla.org/en-US/docs/Web/API/Window/self) */ %>
+    <script>delete window.self;</script>
 
-          + Change the order of your scripts
-          + Import scripts from other directories
-          + Use a different preprocessor, like TypeScript
-
-    -->
-
+    <% /* Auto-injected <script> tags: */ %>
     <!--SCRIPTS-->
     <!--SCRIPTS END-->
   </body>

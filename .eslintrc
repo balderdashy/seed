@@ -3,7 +3,7 @@
   //   ║╣ ╚═╗║  ║║║║ ║ ├┬┘│
   //  o╚═╝╚═╝╩═╝╩╝╚╝ ╩ ┴└─└─┘
   // A set of basic code conventions (similar to a .jshintrc file) designed to
-  // and encourage quality and consistency across your Sails app's code base.
+  // encourage quality and consistency across your Sails app's code base.
   // These rules are checked against automatically any time you run `npm test`.
   // 
   // > An additional eslintrc override file is included in the `assets/` folder
@@ -27,17 +27,25 @@
   },
 
   "parserOptions": {
-    "ecmaVersion": 8
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
   },
 
   "globals": {
-    // If "no-undef" is enabled below and your app uses globals, be sure to list all
-    // relevant globals below (including the globalIds of models, if appropriate):
+    // If "no-undef" is enabled below, be sure to list all global variables that
+    // are used in this app's backend code (including the globalIds of models):
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    "Promise": true,
     "sails": true,
     "_": true,
-    "async": true
-    // ...and any other backend globals (e.g. `"Organization": true`)
+    "async": true,
+
+    // Models:
+    "User": true
+    
+    // …and any others.
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   },
 
@@ -69,12 +77,9 @@
     "no-return-assign":             ["error", "always"],
     "no-sequences":                 ["error"],
     "no-trailing-spaces":           ["warn"],
-    "no-undef":                     ["off"],
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    // ^^Note: If this "no-undef" rule is enabled (set to `["error"]`), then all model globals
-    // (e.g. `"Organization": true`) should be included above under "globals".
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    "no-undef":                     ["error"],
     "no-unexpected-multiline":      ["warn"],
+    "no-unreachable":               ["warn"],
     "no-unused-vars":               ["warn", {"caughtErrors":"all", "caughtErrorsIgnorePattern": "^unused($|[A-Z].*$)"}],
     "no-use-before-define":         ["error", {"functions":false}],
     "one-var":                      ["warn", "never"],
