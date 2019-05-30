@@ -3,7 +3,6 @@ parasails.registerPage('signup', {
   //  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
   //  ╩╝╚╝╩ ╩ ╩╩ ╩╩═╝  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝
   data: {
-
     // Form data
     formData: { /* … */ },
 
@@ -19,7 +18,6 @@ parasails.registerPage('signup', {
 
     // Success state when form has been submitted
     cloudSuccess: false,
-
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
@@ -29,8 +27,8 @@ parasails.registerPage('signup', {
     // Attach any initial data from the server.
     _.extend(this, SAILS_LOCALS);
   },
-  mounted: function() {
-    this.$focus('[autofocus]');
+  mounted: async function() {
+    //…
   },
 
   //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
@@ -38,8 +36,7 @@ parasails.registerPage('signup', {
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
 
-    submittedForm: function() {
-
+    submittedForm: async function() {
       if(this.isEmailVerificationRequired) {
         // If email confirmation is enabled, show the success message.
         this.cloudSuccess = true;
@@ -54,7 +51,6 @@ parasails.registerPage('signup', {
     },
 
     handleParsingForm: function() {
-
       // Clear out any pre-existing error messages.
       this.formErrors = {};
 
@@ -66,8 +62,7 @@ parasails.registerPage('signup', {
       }
 
       // Validate email:
-      var isValidEmailAddress = parasails.require('isValidEmailAddress');
-      if(!argins.emailAddress || !isValidEmailAddress(argins.emailAddress)) {
+      if(!argins.emailAddress || !parasails.util.isValidEmailAddress(argins.emailAddress)) {
         this.formErrors.emailAddress = true;
       }
 
@@ -94,7 +89,7 @@ parasails.registerPage('signup', {
       }
 
       return argins;
-    }
+    },
 
   }
 });

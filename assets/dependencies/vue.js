@@ -28,6 +28,12 @@
     global.SAILS_LOCALS &&
     typeof global.SAILS_LOCALS === 'object' &&
     (global.SAILS_LOCALS._environment === 'staging' || global.SAILS_LOCALS._environment === 'production');
+
+    // If we don't have `SAILS_LOCALS`, we'll just assume this is running in production or staging,
+    // to avoid logging unnecessary warnings in production (e.g. on the 404 page).
+    if(!global || !global.SAILS_LOCALS) {
+      IS_VUE_RUNNING_IN_PRODUCTION_OR_STAGING = true;
+    }
   //------------------------------------------------------------
 
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(IS_VUE_RUNNING_IN_PRODUCTION_OR_STAGING) :

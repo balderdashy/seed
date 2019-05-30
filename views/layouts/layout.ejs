@@ -6,33 +6,16 @@
     <% /* Viewport tag for sensible mobile support */ %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <% /* Script tags should normally be included further down the page- but any
-    scripts that load fonts (e.g. Fontawesome ≥v5) are special exceptions to the
-    rule. (Include them up here along with any hard-coded «link» tags for Typekit,
-    Google Fonts, etc. - above the «body» to prevent the page flickering when fonts
-    load.) */ %>
-
-    <% /* Certain scripts, normally analytics tools like Google Tag Manager and
-    Google Analytics, should only be included in production: */
-    if (sails.config.environment === 'production') { %>
-    <!-- Google Analytics, Google Tag Manager, etc. -->
-    <% }
-    /* Otherwise, any such scripts are excluded, and we instead inject a
-    robots/noindex meta tag to help prevent any unwanted visits from search engines. */
-    else { %>
-    <meta name="robots" content="noindex">
-    <% } %>
-
     <% /*
         Stylesheets
         ========================
 
-        Stylesheets can be hard-coded as `<link>` tags, automatically injected
+        Stylesheets can be hard-coded as «link» tags, automatically injected
         by the asset pipeline between "STYLES" and "STYLES END", or both.
         (https://sailsjs.com/docs/concepts/assets/task-automation)
     */ %>
 
-    <% /* Auto-injected <link> tags: */ %>
+    <% /* Auto-injected «link» tags: */ %>
     <!--STYLES-->
     <!--STYLES END-->
   </head>
@@ -89,9 +72,9 @@
 
       <footer id="page-footer" class="navbar navbar-light justify-content-between flex-row-reverse">
         <div class="nav">
-          <small class="nav-item"><a class="nav-link text-info" href="/contact">Contact us</a></small>
-          <small class="nav-item"><a class="nav-link text-info" href="/legal/terms">Terms of Use</a></small>
-          <small class="nav-item"><a class="nav-link text-info" href="/legal/privacy">Privacy policy</a></small>
+          <small class="nav-item"><a class="nav-link text-info" href="/contact">Contact<span class="d-none d-sm-inline"> us</span></a></small>
+          <small class="nav-item"><a class="nav-link text-info" href="/legal/terms">Terms<span class="d-none d-sm-inline"> of Use</span></a></small>
+          <small class="nav-item"><a class="nav-link text-info" href="/legal/privacy">Privacy<span class="d-none d-sm-inline"> policy</span></a></small>
           <% if(me) { %>
           <small class="nav-item"><a class="nav-link text-info" href="/logout">Sign out</a></small>
           <% } %>
@@ -105,7 +88,7 @@
       Client-side JavaScript
       ========================
 
-      Scripts can be hard-coded as <script> tags, automatically injected
+      Scripts can be hard-coded as «script» tags, automatically injected
       by the asset pipeline between "SCRIPTS" and "SCRIPTS END", or both.
       (https://sailsjs.com/docs/concepts/assets/task-automation)
     */ %>
@@ -117,7 +100,7 @@
     (see https://developer.mozilla.org/en-US/docs/Web/API/Window/self) */ %>
     <script>delete window.self;</script>
 
-    <% /* Auto-injected <script> tags: */ %>
+    <% /* Auto-injected «script» tags: */ %>
     <!--SCRIPTS-->
     <!--SCRIPTS END-->
   </body>

@@ -4,11 +4,12 @@
  * A button with a built-in loading spinner.
  *
  * @type {Component}
+ *
+ * @event click   [emitted when clicked]
  * -----------------------------------------------------------------------------
  */
 
 parasails.registerComponent('ajaxButton', {
-
   //  ╔═╗╦═╗╔═╗╔═╗╔═╗
   //  ╠═╝╠╦╝║ ║╠═╝╚═╗
   //  ╩  ╩╚═╚═╝╩  ╚═╝
@@ -21,7 +22,7 @@ parasails.registerComponent('ajaxButton', {
   //  ╩╝╚╝╩ ╩ ╩╩ ╩╩═╝  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝
   data: function (){
     return {
-
+      //…
     };
   },
 
@@ -46,15 +47,13 @@ parasails.registerComponent('ajaxButton', {
   //  ║  ║╠╣ ║╣ ║  ╚╦╝║  ║  ║╣
   //  ╩═╝╩╚  ╚═╝╚═╝ ╩ ╚═╝╩═╝╚═╝
   beforeMount: function() {
-
+    //…
   },
-
-  mounted: function (){
-
+  mounted: async function(){
+    //…
   },
-
   beforeDestroy: function() {
-
+    //…
   },
 
   //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
@@ -62,10 +61,9 @@ parasails.registerComponent('ajaxButton', {
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
 
-    click: function(){
+    click: async function(){
       this.$emit('click');
-    }
+    },
 
   }
-
 });

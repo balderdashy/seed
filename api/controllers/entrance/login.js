@@ -59,7 +59,7 @@ and exposed as \`req.me\`.)`
       responseType: 'unauthorized'
       // ^This uses the custom `unauthorized` response located in `api/responses/unauthorized.js`.
       // To customize the generic "unauthorized" response across this entire app, change that file
-      // (see http://sailsjs.com/anatomy/api/responses/unauthorized-js).
+      // (see api/responses/unauthorized).
       //
       // To customize the response for _only this_ action, replace `responseType` with
       // something else.  For example, you might set `statusCode: 498` and change the

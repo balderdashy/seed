@@ -13,13 +13,13 @@ module.exports.globals = {
 
   /****************************************************************************
   *                                                                           *
-  * Whether to expose the locally-installed `lodash` as a global variable     *
+  * Whether to expose the locally-installed Lodash as a global variable       *
   * (`_`), making  it accessible throughout your app.                         *
   * (See the link above for help.)                                            *
   *                                                                           *
   ****************************************************************************/
 
-  _: require('lodash'),
+  _: require('@sailshq/lodash'),
 
   /****************************************************************************
   *                                                                           *

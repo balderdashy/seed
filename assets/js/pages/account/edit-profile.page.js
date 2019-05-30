@@ -3,7 +3,6 @@ parasails.registerPage('edit-profile', {
   //  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
   //  ╩╝╚╝╩ ╩ ╩╩ ╩╩═╝  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝
   data: {
-
     // Main syncing/loading state for this page.
     syncing: false,
 
@@ -16,7 +15,6 @@ parasails.registerPage('edit-profile', {
 
     // Server error state for the form
     cloudError: '',
-
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
@@ -30,24 +28,24 @@ parasails.registerPage('edit-profile', {
     this.formData.fullName = this.me.fullName;
     this.formData.emailAddress = this.me.emailChangeCandidate ? this.me.emailChangeCandidate : this.me.emailAddress;
   },
+  mounted: async function() {
+    //…
+  },
 
   //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
   //  ║║║║ ║ ║╣ ╠╦╝╠═╣║   ║ ║║ ║║║║╚═╗
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
 
-    submittedForm: function() {
-
+    submittedForm: async function() {
       // Redirect to the account page on success.
       // > (Note that we re-enable the syncing state here.  This is on purpose--
       // > to make sure the spinner stays there until the page navigation finishes.)
       this.syncing = true;
       window.location = '/account';
-
     },
 
     handleParsingForm: function() {
-
       // Clear out any pre-existing error messages.
       this.formErrors = {};
 
