@@ -2,7 +2,9 @@
 
 a [Sails v1](https://sailsjs.com) application generated with 
 
-`sails new seed -- caviar`
+```
+sails new seed --caviar
+```
 
 
 ### Links
