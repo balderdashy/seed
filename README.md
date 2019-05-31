@@ -1,6 +1,8 @@
 # seed
 
-a [Sails v1](https://sailsjs.com) application
+a [Sails v1](https://sailsjs.com) application generated with 
+
+`sails new seed -- caviar`
 
 
 ### Links
