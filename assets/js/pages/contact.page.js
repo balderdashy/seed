@@ -3,7 +3,6 @@ parasails.registerPage('contact', {
   //  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
   //  ╩╝╚╝╩ ╩ ╩╩ ╩╩═╝  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝
   data: {
-
     // Main syncing/loading state for this page.
     syncing: false,
 
@@ -19,22 +18,30 @@ parasails.registerPage('contact', {
 
     // Success state when form has been submitted
     cloudSuccess: false,
-
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
   //  ║  ║╠╣ ║╣ ║  ╚╦╝║  ║  ║╣
   //  ╩═╝╩╚  ╚═╝╚═╝ ╩ ╚═╝╩═╝╚═╝
-  mounted: function() {
-
-    this.$focus('[autofocus]');
-
+  beforeMount: function() {
+    // Attach any initial data from the server.
+    _.extend(this, SAILS_LOCALS);
+  },
+  mounted: async function() {
+    //…
   },
 
   //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
   //  ║║║║ ║ ║╣ ╠╦╝╠═╣║   ║ ║║ ║║║║╚═╗
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
+
+    submittedForm: async function() {
+
+      // Show the success message.
+      this.cloudSuccess = true;
+
+    },
 
     handleParsingForm: function() {
 
@@ -71,13 +78,6 @@ parasails.registerPage('contact', {
       }
 
       return argins;
-    },
-
-    submittedForm: function() {
-
-      // Show the success message.
-      this.cloudSuccess = true;
-
     },
 
   }

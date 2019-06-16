@@ -40,12 +40,12 @@
     "parasails": true,
     "$": true,
     "_": true,
+    "bowser": true,
     "StripeCheckout": true,
     "Stripe": true,
     "Vue": true,
     "VueRouter": true,
     // "moment": true,
-    // "bowser": true
     // ...etc.
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

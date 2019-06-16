@@ -168,16 +168,16 @@ ${htmlEmailContents}
 
       if (!sails.config.custom.mailgunSecret || !sails.config.custom.mailgunDomain) {
         throw new Error(`Cannot deliver email to "${inputs.to}" because:
-          `+(()=>{
-            let problems = [];
-            if (!sails.config.custom.mailgunSecret) {
-              problems.push(' • Mailgun secret is missing from this app\'s configuration (`sails.config.custom.mailgunSecret`)');
-            }
-            if (!sails.config.custom.mailgunDomain) {
-              problems.push(' • Mailgun domain is missing from this app\'s configuration (`sails.config.custom.mailgunDomain`)');
-            }
-            return problems.join('\n');
-          })()+`
+        `+(()=>{
+          let problems = [];
+          if (!sails.config.custom.mailgunSecret) {
+            problems.push(' • Mailgun secret is missing from this app\'s configuration (`sails.config.custom.mailgunSecret`)');
+          }
+          if (!sails.config.custom.mailgunDomain) {
+            problems.push(' • Mailgun domain is missing from this app\'s configuration (`sails.config.custom.mailgunDomain`)');
+          }
+          return problems.join('\n');
+        })()+`
 
 To resolve these configuration issues, add the missing config variables to
 \`config/custom.js\`-- or in staging/production, set them up as system

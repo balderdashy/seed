@@ -1,7 +1,7 @@
 @footer-height: 40px;
 @container-md-max-width: 1100px;
 
-[v-cloak] { display: none }
+[v-cloak] { display: none; }
 
 html, body {
   height: 100%;
@@ -9,9 +9,7 @@ html, body {
 }
 
 #page-wrap {
-  height: 100%;
-  height: auto!important;
-  min-height: 100%;
+  .stretch-page();
   position: relative;
   padding-bottom: @footer-height;
 
@@ -41,6 +39,15 @@ html, body {
   .xs-only {
     display: none;
   }
+}
+
+body.detected-mobile {
+  // Above and beyond the media queries below, this selector (which relies on
+  // `parasails` automatically attaching this class, if appropriate) contains
+  // styles intended to be activated specifically when loaded from a recognized
+  // mobile device, regardless of viewport dimensions.  This includes tablet
+  // devices (like the iPad) as well as handset devices (like the iPhone).
+  // …
 }
 
 @media (max-width: 800px) {
@@ -74,4 +81,3 @@ html, body {
     }
   }
 }
-

@@ -3,9 +3,6 @@ parasails.registerPage('account-overview', {
   //  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
   //  ╩╝╚╝╩ ╩ ╩╩ ╩╩═╝  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝
   data: {
-
-    me: { /* ... */ },
-
     isBillingEnabled: false,
 
     hasBillingCard: false,
@@ -43,7 +40,9 @@ parasails.registerPage('account-overview', {
       this.me.billingCardExpMonth &&
       this.me.billingCardExpYear
     );
-
+  },
+  mounted: async function() {
+    //…
   },
 
   //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
@@ -87,16 +86,16 @@ parasails.registerPage('account-overview', {
       }
     },
 
-    clickRemoveCardButton: function() {
+    clickRemoveCardButton: async function() {
       this.removeCardModalVisible = true;
     },
 
-    closeRemoveCardModal: function() {
+    closeRemoveCardModal: async function() {
       this.removeCardModalVisible = false;
       this.cloudError = false;
     },
 
-    submittedRemoveCardForm: function() {
+    submittedRemoveCardForm: async function() {
 
       // Update billing info on success.
       this.me.billingCardLast4 = undefined;

@@ -116,6 +116,8 @@ will be disabled and/or hidden in the UI.
           skipAssets: true,
           fn: async function(req, res, next){
 
+            var url = require('url');
+
             // First, if this is a GET request (and thus potentially a view),
             // attach a couple of guaranteed locals.
             if (req.method === 'GET') {
@@ -136,16 +138,21 @@ will be disabled and/or hidden in the UI.
                 throw new Error('Cannot attach view local `me`, because this view local already exists!  (Is it being attached somewhere else?)');
               }
               res.locals.me = undefined;
-
             }//ﬁ
 
-            // Next, check if this is a GET request to the `webhooks.` or `click.`
-            // subdomains.  If so, we'll automatically go ahead and redirect to the
-            // corresponding path under our base URL, which is environment-specific.
+            // Next, if we're running in our actual "production" or "staging" Sails
+            // environment, check if this is a GET request via some other subdomain,
+            // for example something like `webhooks.` or `click.`.  If so, we'll
+            // automatically go ahead and redirect to the corresponding path under
+            // our base URL, which is environment-specific.
             // > Note that we DO NOT redirect virtual socket requests and we DO NOT
             // > redirect non-GET requests (because it can confuse some 3rd party
             // > platforms that send webhook requests.)
-            if (!req.isSocket && req.method === 'GET' && (req.subdomains[0] === 'webhooks' || req.subdomains[0] === 'links')) {
+            var configuredBaseSubdomain;
+            try {
+              configuredBaseSubdomain = url.parse(sails.config.custom.baseUrl).host.match(/^([^\.]+)\./)[1];
+            } catch (unusedErr) { /*…*/}
+            if ((sails.config.environment === 'staging' || sails.config.environment === 'production') && !req.isSocket && req.method === 'GET' && req.subdomains[0] !== configuredBaseSubdomain) {
               sails.log.info('Redirecting GET request from `'+req.subdomains[0]+'.` subdomain...');
               return res.redirect(sails.config.custom.baseUrl+req.url);
             }//•

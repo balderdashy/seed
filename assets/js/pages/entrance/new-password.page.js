@@ -3,7 +3,6 @@ parasails.registerPage('new-password', {
   //  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
   //  ╩╝╚╝╩ ╩ ╩╩ ╩╩═╝  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝
   data: {
-
     // Main syncing/loading state for this page.
     syncing: false,
 
@@ -16,7 +15,6 @@ parasails.registerPage('new-password', {
 
     // Server error state for the form
     cloudError: '',
-
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
@@ -26,8 +24,8 @@ parasails.registerPage('new-password', {
     // Attach any initial data from the server.
     _.extend(this, SAILS_LOCALS);
   },
-  mounted: function() {
-    this.$focus('[autofocus]');
+  mounted: async function() {
+    //…
   },
 
   //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
@@ -35,8 +33,15 @@ parasails.registerPage('new-password', {
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
 
-    handleParsingForm: function() {
+    submittedForm: async function() {
+      // Redirect to the logged-in dashboard on success.
+      // > (Note that we re-enable the syncing state here.  This is on purpose--
+      // > to make sure the spinner stays there until the page navigation finishes.)
+      this.syncing = true;
+      window.location = '/';
+    },
 
+    handleParsingForm: function() {
       // Clear out any pre-existing error messages.
       this.formErrors = {};
 
@@ -62,16 +67,6 @@ parasails.registerPage('new-password', {
       }
 
       return argins;
-    },
-
-    submittedForm: function() {
-
-      // Redirect to the logged-in dashboard on success.
-      // > (Note that we re-enable the syncing state here.  This is on purpose--
-      // > to make sure the spinner stays there until the page navigation finishes.)
-      this.syncing = true;
-      window.location = '/';
-
     },
 
   }
